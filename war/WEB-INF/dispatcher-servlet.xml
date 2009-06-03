@@ -6,6 +6,14 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan base-package="com.commons" />
+	
+	<bean id="spreadsheetService" class="com.google.gdata.client.spreadsheet.SpreadsheetService">
+		<constructor-arg><value>dispatcher-23</value></constructor-arg>
+	</bean>
+	
+	<bean id="metafeedUrl" class="java.net.URL">
+		<constructor-arg><value>http://spreadsheets.google.com/feeds/spreadsheets/private/full</value></constructor-arg>
+	</bean>
 
 	<bean id="entityManager" factory-bean="EMF" factory-method="entityManager" />
 
